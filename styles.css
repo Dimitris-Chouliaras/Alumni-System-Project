@@ -9,6 +9,37 @@ body, html {
     flex-direction: column; /* Στοίχιση σε στήλη: Container πάνω, Footer κάτω */
 }
 
+/* Στυλ για το Header */
+header {
+    background-color: #1a252f; /* Λίγο πιο σκούρο από το αριστερό panel */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Logo αριστερά, Nav δεξιά */
+    align-items: center;
+    border-bottom: 3px solid #3498db; /* Μια μπλε γραμμή για στυλ */
+    flex-shrink: 0; /* Για να μην συμπιέζεται το ύψος του */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Δίνει ένα ελαφρύ βάθος/σκιά */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+header nav span {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
 /* Ο κεντρικός περιέκτης */
 .container {
     display: flex;
