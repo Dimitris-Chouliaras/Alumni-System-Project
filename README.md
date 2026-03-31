@@ -4,7 +4,7 @@
 
 ## 🔗 Live Demo
 Μπορείτε να δείτε την εφαρμογή live εδώ: 
-[**Σύνδεσμος GitHub Pages**](ΕΔΩ_ΒΑΛΕ_ΤΟ_LINK_ΣΟΥ)
+[**Σύνδεσμος GitHub Pages**](https://dimitris-chouliaras.github.io/Alumni-System-Project/)
 
 ## 📝 Περιγραφή
 Η εφαρμογή επιδεικνύει τη χρήση της τεχνικής **AJAX (Asynchronous JavaScript and XML)** για την ασύγχρονη φόρτωση και απεικόνιση δεδομένων από δύο διαφορετικές πηγές:
