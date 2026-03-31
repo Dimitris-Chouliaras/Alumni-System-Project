@@ -1,0 +1,114 @@
+Η εργασία αφορά ένα σύστημα αποφοίτων του τμήματος
+
+4 θέματα:
+1. Φτιάξε το XML με καλές πρακτικές
+2. Πρόσθεσε DTD μέσα στο XML
+3. Μετέτρεψε το XML σε JSON
+4.Φτιάξε HTML σελίδα με AJAX
+
+Θέλει 3 αρχεία
+1. alumni.xml — τα δεδομένα σε XML με DTD
+2. alumni.json — τα ίδια δεδομένα σε JSON
+3. index.html — ιστοσελίδα που φορτώνει τα παραπάνω με AJAX
+
+Θέμα 1 - XML
+Να οργανώσουμε τα δεδομένα αποφοίτων σε XML
+
+* Ομαδοποίηση δεδομένων (όχι όλα στο ίδιο επίπεδο)
+* Το αρχείο θα έχει πολλές οντότητες (πολλοί απόφοιτοι)
+* Κάθε οντότητα μπορεί να έχει πολλαπλά κάποια στοιχεία (π.χ. πολλά τηλέφωνα, πολλές απασχολήσεις)
+* Well-formed XML
+* Καλές πρακτικές για το τι είναι element και τι attribute
+* Βαθύ δέντρο — όχι ρηχό βάθους 2
+* Δεδομένα για 3 αποφοίτους, 2-3 τηλέφωνα/κοινωνικά δίκτυα κ.λπ.
+
+7 επίπεδα 
+
+επιπεδο 1: alumni_system ← ρίζα
+
+επιπεδο 2: general_info και alumni_list
+
+επιπεδο 3: geolocation, call_timestamp, system_message, user με γονεα το general_info και alumnus με γονεα το alumnus_list
+
+επιπεδο 4: personal_info, academic_info, origin, current address, contact, employment_history με γονέα το alumnus
+
+επιπεδο 5: firstname, lastname με γονεα το personal_info και admission_year, graduation, degree_grade με γονεα το academic_info και prefecture, city με γονεα το origin και street, number, city, postal_code, country με γονεα το current address και phones, email, websites, social_networks με γονεα το contact και employement με γονεα το employment_history
+
+επιπεδο 6: phone με γονεα το phones και social με γονεα το social_networks και employer, employer_site, period, subject, geolocation, με γονεα το employement 
+
+επιπεδο 7: from, to με γονεα το period και category με γονεα το subject
+
+ΦΤΙΑΧΝΩ ΤΗΝ XML ΜΕ ΒΑΣΗ ΤΗΝ ΘΕΩΡΙΑ
+
+Θέμα 2 - DTD
+ΦΤΙΑΧΝΩ ΤΗΝ DTD ΜΕ ΒΑΣΗ ΤΗΝ ΘΕΩΡΙΑ
+
+*1. Στην 1ή γραμμή βάζουμε το standalone = "yes"
+*2. Δηλώνουμε την ιεραρχία
+            -> ομαδοποίηση δεδομένων και βάθος δέντρου
+            -> για κάθε tag που περικλύει άλλα tags, τα βάζουμε σε παρένθεση
+            -> σημειώνουμε και τις πολλαπλότητες (? , * , +)
+*3. Πάιρνουμε τα φύλλα, δηλαδή τα tags που δέχν έχουν άλλα tags μέσα τους
+        Ανάλογα το περιεχόμενο τους βάζουμε:
+            -> #PCDATA αν είναι κείμενο
+            -> EMPTY αν δεν έχει κέιμενο ή άλλα tags. Η μόνη πληροφορία είναι προσυμπληρωμένη στα attributes του
+*4. Δήλωση των ιδιοτήτων (attributes)
+            -> Παίρνουμε ένα ένα όλα τα attributes και κάνουμε τις κατάλληλες δηλώσεις
+
+Θέμα 3 - Μετατροπή σε JSON
+1 — Root element
+    Το root <alumni_system> γίνεται:
+
+{
+  "alumni_system": {
+    
+  }
+}
+
+2 — general_info
+Το <general_info> γίνεται object:
+
+"general_info": {
+}
+
+3 — geolocation (ΠΟΛΥ ΣΗΜΑΝΤΙΚΟ)
+Το <geolocation lat="39.3666" lon="22.9425"/>
+
+    Attributes → γίνονται fields
+
+"geolocation": {
+  "lat": 39.3666,
+  "lon": 22.9425
+}
+
+4 — call_timestamp
+<call_timestamp>2026-03-28T14:32:00</call_timestamp>
+
+    string:
+
+"call_timestamp": "2026-03-28T14:32:00"
+
+5 — system_message
+"system_message": "Καλώς ήρθατε στο σύστημα αποφοίτων του Τμήματος Ψηφιακών Συστημάτων."
+
+6 — user (attributes μόνο)
+Το <user username="dpapadop" role="alumni"/>
+
+    γίνεται:
+
+"user": {
+  "username": "dpapadop",
+  "role": "alumni"
+}
+
+7 — alumni_list
+Το <alumni_list> θα περιέχει ΠΟΛΛΑ <alumnus>
+    άρα θα γίνει array
+Προς το παρόν:
+
+"alumni_list": []
+
+Θέμα 4 - plain html/javascript για site 
+- Ένα button στο αριστερό div για να καλεί το xml
+- Ένα button στο αριστερό div για να καλεί το json
+- Ένα button στο αριστερό div που καλεί μια συνάρτηση καθαρισμού των αποτελεσμάτων στο δεξί div

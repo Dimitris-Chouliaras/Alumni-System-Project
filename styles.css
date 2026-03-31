@@ -1,0 +1,124 @@
+/* Βασικός καθαρισμός */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Κλειδώνουμε το συνολικό ύψος στο 100% της οθόνης */
+    overflow: hidden; /* Απαγορεύουμε το scroll σε όλη τη σελίδα */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; /* Στοίχιση σε στήλη: Container πάνω, Footer κάτω */
+}
+
+/* Ο κεντρικός περιέκτης */
+.container {
+    display: flex;
+    flex: 1; /* Παίρνει όλο τον διαθέσιμο χώρο, σπρώχνοντας το footer κάτω */
+    min-height: 0; /* Σημαντικό για να δουλέψει το overflow στα εσωτερικά divs */
+}
+
+/* Αριστερό div: Σταθερό 150px βάσει εκφώνησης [cite: 47] */
+#left-panel {
+    width: 150px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Δεξί div: Καταλαμβάνει το υπόλοιπο πλάτος [cite: 47] */
+#right-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow-y: auto; /* ΜΟΝΟ εδώ επιτρέπεται scroll αν τα δεδομένα είναι πολλά */
+}
+
+/* Στυλ Footer */
+footer {
+    height: auto; 
+    padding: 10px 0; /* Εσωτερικό κενό πάνω-κάτω στο footer */
+    background-color: #34495e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+footer p {
+    margin: 0;     /* Κατάργηση όλων των εξωτερικών περιθωρίων */
+    padding: 2px 0; /* Μικρό εσωτερικό κενό για να μην κολλάνε τελείως */
+    font-size: 0.85em;
+}
+
+/* Έλεγχος του κενού του ίδιου του div των εικονιδίων */
+.social-links {
+    margin: 5px 0; /* Μικρό περιθώριο 5px πάνω και κάτω από τα εικονίδια */
+    display: flex;
+    gap: 20px;     /* Κενό ανάμεσα στα ίδια τα εικονίδια */
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.4s, color 0.4s;
+    line-height: 1; /* Διασφαλίζει ότι το ύψος της γραμμής δεν προσθέτει κενό */
+}
+
+.social-links a:hover {
+    color: #000000; /* Αλλαγή χρώματος στο hover */
+    transform: scale(1.2); /* Μικρό εφέ μεγέθυνσης */
+    text-decoration: underline;
+}
+
+.pms a {
+    color: #ffffff;
+    background: none;
+    outline: none;
+    background: transparent; /* Διασφαλίζει ότι δεν υπάρχει φόντο */
+    background-color: transparent !important; /* Διώχνει το μπλε φόντο */
+    text-decoration: none;
+    display: inline-block; /* ΑΠΑΡΑΙΤΗΤΟ: Επιτρέπει στο scale να λειτουργήσει */
+    transition: transform 0.4s, color 0.4s;
+}
+
+.pms a:hover {
+    color: #000000; /* Αλλαγή χρώματος στο hover */
+    transform: scale(1.01); /* Μικρό εφέ μεγέθυνσης */
+    text-decoration: underline;
+}
+
+/* Στυλ για τα κουμπιά */
+button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Περιοχή εμφάνισης δεδομένων */
+#display-area {
+    border: 1px dashed #aaa;
+    padding: 15px;
+    min-height: 200px;
+}
+
+#btn-surprise {
+    background-color: #e74c3c; /* Κόκκινο χρώμα */
+    font-weight: bold;
+}
+
+#btn-surprise:hover {
+    background-color: #c0392b;
+}

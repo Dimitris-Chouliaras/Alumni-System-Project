@@ -1,0 +1,158 @@
+{
+  "alumni_system": {
+    "general_info": {
+      "geolocation": {
+        "lat": 39.3666,
+        "lon": 22.9425
+      },
+      "call_timestamp": "2026-03-28T14:32:00",
+      "system_message": "Καλώς ήρθατε στο σύστημα αποφοίτων του Τμήματος Ψηφιακών Συστημάτων.",
+      "user": {
+        "username": "dpapadop",
+        "role": "alumni"
+      }
+    },
+    "alumni_list": [
+      {
+        "@id": "A001",
+        "personal_info": {
+          "firstname": "Δημήτριος",
+          "lastname": "Χουλιάρας"
+        },
+        "academic_info": {
+          "admission_year": 2017,
+          "graduation": {
+            "month": "06",
+            "year": 2022
+          },
+          "degree_grade": 8.25
+        },
+        "origin": {
+          "prefecture": "Θεσσαλία",
+          "city": "Λάρισα"
+        },
+        "current_address": {
+          "street": "ΔενΣουΛεω",
+          "number": "7",
+          "city": "Λάρισα",
+          "postal_code": "41336",
+          "country": "Ελλάδα"
+        },
+        "contact": {
+          "phones": [
+            { "type": "mobile", "number": "6981092377" },
+            { "type": "home", "number": "2410000000" }
+          ],
+          "email": "mitsosxou@yahoo.gr",
+          "website": "https://www.facebook.com/mitsosxou",
+          "social_networks": [
+            { "type": "github", "url": "https://github.com/Dimitris-Chouliaras" },
+            { "type": "linkedin", "url": "https://www.linkedin.com/in/dimitrios-chouliaras/" }
+
+          ]
+        },
+        "employment_history": [
+          {
+            "employer": "Intrasoft International",
+            "employer_site": "https://www.intrasoft-intl.com",
+            "period": { "from": { "month": "09", "year": 2022 }, "to": { "month": "03", "year": 2024 } },
+            "subject": { "related_to_studies": true, "category": "Προγραμματισμός / Ανάπτυξη Λογισμικού" },
+            "geolocation": { "lat": 37.9755, "lon": 23.7348 }
+          },
+          {
+            "employer": "Πανεπιστήμιο Θεσσαλίας",
+            "employer_site": "https://www.uth.gr",
+            "period": { "from": { "month": "04", "year": 2024 }, "to": { "month": "03", "year": 2026 } },
+            "subject": { "related_to_studies": true, "category": "Δεδομένα / AI / ML" },
+            "geolocation": { "lat": 39.3605, "lon": 22.9517 }
+          }
+        ]
+      },
+      {
+        "@id": "A002",
+        "personal_info": {
+          "firstname": "Μαρία",
+          "lastname": "Κωνσταντίνου"
+        },
+        "academic_info": {
+          "admission_year": 2016,
+          "graduation": { "month": "02", "year": 2021 },
+          "degree_grade": 9.10
+        },
+        "origin": { "prefecture": "Αττική", "city": "Αθήνα" },
+        "current_address": {
+          "street": "Πατησίων",
+          "number": "76",
+          "city": "Αθήνα",
+          "postal_code": "10434",
+          "country": "Ελλάδα"
+        },
+        "contact": {
+          "phones": [{ "type": "mobile", "number": "6945678901" }],
+          "email": "maria.konst@outlook.com",
+          "social_networks": [
+            { "type": "instagram", "url": "https://instagram.com/mkonst_dev" },
+            { "type": "linkedin", "url": "https://linkedin.com/in/mkonst" }
+          ]
+        },
+        "employment_history": [
+          {
+            "employer": "Vodafone Greece",
+            "employer_site": "https://www.vodafone.gr",
+            "period": { "from": { "month": "07", "year": 2021 }, "to": { "month": "03", "year": 2026 } },
+            "subject": { "related_to_studies": true, "category": "Δίκτυα / Κυβερνοασφάλεια" },
+            "geolocation": { "lat": 37.9838, "lon": 23.7275 }
+          }
+        ]
+      },
+      {
+        "@id": "A003",
+        "personal_info": {
+          "firstname": "Νίκος",
+          "lastname": "Αλεξίου"
+        },
+        "academic_info": {
+          "admission_year": 2015,
+          "graduation": { "month": "09", "year": 2020 },
+          "degree_grade": 6.80
+        },
+        "origin": { "prefecture": "Λάρισα", "city": "Λάρισα" },
+        "current_address": {
+          "street": "Κύπρου",
+          "number": "33",
+          "city": "Λάρισα",
+          "postal_code": "41222",
+          "country": "Ελλάδα"
+        },
+        "contact": {
+          "phones": [
+            { "type": "mobile", "number": "6988112233" },
+            { "type": "work", "number": "2410556677" }
+          ],
+          "email": "n.alexiou@yahoo.gr",
+          "website": "https://nikosalexiou.gr",
+          "social_networks": [
+            { "type": "facebook", "url": "https://facebook.com/nikosalexiou" },
+            { "type": "linkedin", "url": "https://linkedin.com/in/nalexiou" }
+          ]
+        },
+        "employment_history": [
+          {
+            "employer": "Καφεβιομηχανία Λούμος ΑΕ",
+            "employer_site": "https://www.loumos.gr",
+            "period": { "from": { "month": "01", "year": 2019 }, "to": { "month": "06", "year": 2020 } },
+            "subject": { "related_to_studies": false, "category": "Διοίκηση / Management" },
+            "geolocation": { "lat": 39.6390, "lon": 22.4191 }
+          },
+          {
+            "employer": "Lamda Development",
+            "employer_site": "https://www.lamdadev.com",
+            "period": { "from": { "month": "09", "year": 2020 }, "to": { "month": "03", "year": 2026 } },
+            "subject": { "related_to_studies": true, "category": "Προγραμματισμός / Ανάπτυξη Λογισμικού" },
+            "geolocation": { "lat": 37.9908, "lon": 23.7008 }
+          }
+        ]
+      }
+    ]
+  }
+}

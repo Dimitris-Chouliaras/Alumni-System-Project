@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?> <!-- η DTD περιλαμβάνεται μέσα στο αρχείο (Internal DTD), το standalone="yes" -->
+<!DOCTYPE alumni_system [
+
+  <!ELEMENT alumni_system (general_info, alumni_list)>
+
+  <!ELEMENT general_info (geolocation, call_timestamp, system_message, user)>
+  <!ELEMENT geolocation EMPTY>
+  <!ELEMENT call_timestamp (#PCDATA)>
+  <!ELEMENT system_message (#PCDATA)>
+  <!ELEMENT user EMPTY>
+
+  <!ELEMENT alumni_list (alumnus+)>
+  <!ELEMENT alumnus (personal_info, academic_info, origin, current_address, contact, employment_history)>
+
+  <!ELEMENT personal_info (firstname, lastname)>
+  <!ELEMENT firstname (#PCDATA)>
+  <!ELEMENT lastname (#PCDATA)>
+
+  <!ELEMENT academic_info (admission_year, graduation, degree_grade)>
+  <!ELEMENT admission_year (#PCDATA)>
+  <!ELEMENT graduation EMPTY>
+  <!ELEMENT degree_grade (#PCDATA)>
+
+  <!ELEMENT origin (prefecture, city)>
+  <!ELEMENT prefecture (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+
+  <!ELEMENT current_address (street, number, city, postal_code, country)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT number (#PCDATA)>
+  <!ELEMENT postal_code (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+
+  <!ELEMENT contact (phones, email, website?, social_networks)>
+  <!ELEMENT phones (phone*)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT website (#PCDATA)>
+  <!ELEMENT social_networks (social*)>
+  <!ELEMENT social (#PCDATA)>
+
+  <!ELEMENT employment_history (employment+)>
+  <!ELEMENT employment (employer, employer_site, period, subject, geolocation)>
+  <!ELEMENT employer (#PCDATA)>
+  <!ELEMENT employer_site (#PCDATA)>
+  <!ELEMENT period (from, to)>
+  <!ELEMENT from EMPTY>
+  <!ELEMENT to EMPTY>
+  <!ELEMENT subject (category)>
+  <!ELEMENT category (#PCDATA)>
+
+  <!ATTLIST geolocation
+    lat CDATA #REQUIRED
+    lon CDATA #REQUIRED>
+
+  <!ATTLIST user
+    username CDATA #REQUIRED
+    role     CDATA #IMPLIED>
+
+  <!ATTLIST alumnus
+    id ID #REQUIRED>
+
+  <!ATTLIST graduation
+    month CDATA #REQUIRED
+    year  CDATA #REQUIRED>
+
+  <!ATTLIST phone
+    type NMTOKEN #REQUIRED>
+
+  <!ATTLIST social
+    type NMTOKEN #REQUIRED>
+
+  <!ATTLIST from
+    month CDATA #REQUIRED
+    year  CDATA #REQUIRED>
+
+  <!ATTLIST to
+    month CDATA #REQUIRED
+    year  CDATA #IMPLIED> 
+    
+  <!ATTLIST subject
+    related_to_studies (yes|no) #REQUIRED>
+]>
+
+<alumni_system>
+  
+  <general_info>
+    <geolocation lat="39.3666" lon="22.9425"/>
+    <call_timestamp>2026-03-28T14:32:00</call_timestamp>
+    <system_message>Καλώς ήρθατε στο σύστημα αποφοίτων του Τμήματος Ψηφιακών Συστημάτων.</system_message>
+    <user username="dpapadop" role="alumni"/>
+  </general_info>
+
+  <alumni_list>
+
+    <alumnus id="A001">
+      <personal_info>
+        <firstname>Δημήτριος</firstname>
+        <lastname>Χουλιάρας</lastname>
+      </personal_info>
+
+      <academic_info>
+        <admission_year>2017</admission_year>
+        <graduation month="06" year="2022"/>
+        <degree_grade>8.25</degree_grade>
+      </academic_info>
+
+      <origin>
+        <prefecture>Θεσσαλία</prefecture>
+        <city>Λάρισα</city>
+      </origin>
+
+      <current_address>
+        <street>ΔενΣουΛεω</street>
+        <number>7</number>
+        <city>Λάρισα</city>
+        <postal_code>41336</postal_code>
+        <country>Ελλάδα</country>
+      </current_address>
+
+      <contact>
+        <phones>
+          <phone type="mobile">6981092377</phone>
+          <phone type="home">2410000000</phone>
+        </phones>
+        <email>mitsosxou@yahoo.gr</email>
+        <website>https://www.facebook.com/mitsosxou</website>
+        <social_networks>
+          <social type="github">https://github.com/Dimitris-Chouliaras</social>
+          <social type="linkedin">https://www.linkedin.com/in/dimitrios-chouliaras/</social>
+        </social_networks>
+      </contact>
+
+      <employment_history>
+        <employment>
+          <employer>Intrasoft International</employer>
+          <employer_site>https://www.intrasoft-intl.com</employer_site>
+          <period>
+            <from month="09" year="2022"/>
+            <to month="03" year="2024"/>
+          </period>
+          <subject related_to_studies="yes">
+            <category>Προγραμματισμός / Ανάπτυξη Λογισμικού</category>
+          </subject>
+          <geolocation lat="37.9755" lon="23.7348"/>
+        </employment>
+        <employment>
+          <employer>Πανεπιστήμιο Θεσσαλίας</employer>
+          <employer_site>https://www.uth.gr</employer_site>
+          <period>
+            <from month="04" year="2024"/>
+            <to month="03" year="2026"/>
+          </period>
+          <subject related_to_studies="yes">
+            <category>Δεδομένα / AI / ML</category>
+          </subject>
+          <geolocation lat="39.3605" lon="22.9517"/>
+        </employment>
+      </employment_history>
+    </alumnus>
+
+    <alumnus id="A002">
+      <personal_info>
+        <firstname>Μαρία</firstname>
+        <lastname>Κωνσταντίνου</lastname>
+      </personal_info>
+
+      <academic_info>
+        <admission_year>2016</admission_year>
+        <graduation month="02" year="2021"/>
+        <degree_grade>9.10</degree_grade>
+      </academic_info>
+
+      <origin>
+        <prefecture>Αττική</prefecture>
+        <city>Αθήνα</city>
+      </origin>
+
+      <current_address>
+        <street>Πατησίων</street>
+        <number>76</number>
+        <city>Αθήνα</city>
+        <postal_code>10434</postal_code>
+        <country>Ελλάδα</country>
+      </current_address>
+
+      <contact>
+        <phones>
+          <phone type="mobile">6945678901</phone>
+        </phones>
+        <email>maria.konst@outlook.com</email>
+        <social_networks>
+          <social type="instagram">https://instagram.com/mkonst_dev</social>
+          <social type="linkedin">https://linkedin.com/in/mkonst</social>
+        </social_networks>
+      </contact>
+
+      <employment_history>
+        <employment>
+          <employer>Vodafone Greece</employer>
+          <employer_site>https://www.vodafone.gr</employer_site>
+          <period>
+            <from month="07" year="2021"/>
+            <to month="03" year="2026"/>
+          </period>
+          <subject related_to_studies="yes">
+            <category>Δίκτυα / Κυβερνοασφάλεια</category>
+          </subject>
+          <geolocation lat="37.9838" lon="23.7275"/>
+        </employment>
+      </employment_history>
+    </alumnus>
+
+    <alumnus id="A003">
+      <personal_info>
+        <firstname>Νίκος</firstname>
+        <lastname>Αλεξίου</lastname>
+      </personal_info>
+
+      <academic_info>
+        <admission_year>2015</admission_year>
+        <graduation month="09" year="2020"/>
+        <degree_grade>6.80</degree_grade>
+      </academic_info>
+
+      <origin>
+        <prefecture>Λάρισα</prefecture>
+        <city>Λάρισα</city>
+      </origin>
+
+      <current_address>
+        <street>Κύπρου</street>
+        <number>33</number>
+        <city>Λάρισα</city>
+        <postal_code>41222</postal_code>
+        <country>Ελλάδα</country>
+      </current_address>
+
+      <contact>
+        <phones>
+          <phone type="mobile">6988112233</phone>
+          <phone type="work">2410556677</phone>
+        </phones>
+        <email>n.alexiou@yahoo.gr</email>
+        <website>https://nikosalexiou.gr</website>
+        <social_networks>
+          <social type="facebook">https://facebook.com/nikosalexiou</social>
+          <social type="linkedin">https://linkedin.com/in/nalexiou</social>
+        </social_networks>
+      </contact>
+
+      <employment_history>
+        <employment>
+          <employer>Καφεβιομηχανία Λούμος ΑΕ</employer>
+          <employer_site>https://www.loumos.gr</employer_site>
+          <period>
+            <from month="01" year="2019"/>
+            <to month="06" year="2020"/>
+          </period>
+          <subject related_to_studies="no">
+            <category>Διοίκηση / Management</category>
+          </subject>
+          <geolocation lat="39.6390" lon="22.4191"/>
+        </employment>
+        <employment>
+          <employer>Lamda Development</employer>
+          <employer_site>https://www.lamdadev.com</employer_site>
+          <period>
+            <from month="09" year="2020"/>
+            <to month="03" year="2026"/>
+          </period>
+          <subject related_to_studies="yes">
+            <category>Προγραμματισμός / Ανάπτυξη Λογισμικού</category>
+          </subject>
+          <geolocation lat="37.9908" lon="23.7008"/>
+        </employment>
+      </employment_history>
+    </alumnus>
+
+  </alumni_list>
+
+</alumni_system>
